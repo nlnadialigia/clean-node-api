@@ -1,0 +1,8 @@
+{
+  "name": "clean-node-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nlnadialigia/clean-node-api.git",
+  "author": "Nadia <nlnadialigia@gmail.com>",
+  "license": "MIT"
+}
