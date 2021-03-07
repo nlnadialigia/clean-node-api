@@ -24,7 +24,7 @@
   },
   "scripts": {
     "lint": "eslint 'src/**' --fix",
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests"
   }
 }
