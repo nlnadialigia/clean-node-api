@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/nlnadialigia/clean-node-api.git",
   "author": "Nadia <nlnadialigia@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.0.0"
+  }
 }
