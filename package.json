@@ -1,0 +1,42 @@
+{
+  "name": "clean-node-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main/server.js",
+    "debug": "tsnd --respawn --tranplie-only /src/main/server.ts",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "build:watch": "rimraf dist && tsc -p tsconfig-build.json -w",
+    "postbuild": "copyfiles -u 1 public/**/* dist/static",
+    "up": "pnpm run build && docker-compose up -d",
+    "down": "docker-compose down",
+    "check": "pnpm-check -s -u",
+    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test:unit": "pnpm test -- --watch -c jest-unit-config.js",
+    "test:integration": "pnpm test -- --watch -c jest-integration-config.js",
+    "test:staged": "pnpm test -- --findRelatedTests",
+    "test:ci": "pnpm test -- --coverage",
+    "test:coveralls": "pnpm run test:ci && coveralls < coverage/lcov.info",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "git-commit-msg-linter": "^5.0.6",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.0",
+    "ts-jest": "^29.1.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}
